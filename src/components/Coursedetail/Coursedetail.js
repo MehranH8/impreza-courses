@@ -244,7 +244,7 @@ const Coursedetail = () => {
                     </Accordion>
                 </div>
                 <div className="lg:col-span-2 mt-24 mb-24">
-                    <div>
+                    <div className="text-center sm:text-start">
                         <h3 className="text-[28px] font-bold mb-8">
                             مدرس دوره
                         </h3>

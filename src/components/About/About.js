@@ -101,7 +101,7 @@ const About = () => {
     return (
         <div>
             <div className=" mx-16 md:mx-32 mt-24">
-                <div className=" w-full lg:w-[75%] xl:w-[65%]">
+                <div className=" w-full lg:w-[75%] xl:w-[65%] ">
                     <h3 className="text-[24px] sm:text-[40px] font-bold mb-4">
                         درباره دوره های آنلاین
                     </h3>
@@ -136,7 +136,7 @@ const About = () => {
                     </div>
                 </div>
                 <div className="mt-36 ">
-                    <div className="mb-20">
+                    <div className="mb-20 text-center sm:text-start">
                         <h3 className="text-[24px] sm:text-[28px] font-bold mb-4">
                             درباره دوره های آنلاین
                         </h3>
@@ -243,7 +243,7 @@ const About = () => {
                 </div>
 
                 <div className="mb-36">
-                    <div className="mb-20">
+                    <div className="mb-20 text-center sm:text-start">
                         <h3 className="text-[24px] sm:text-[28px] font-bold mb-4">
                             دلایل محبوبیت ما
                         </h3>

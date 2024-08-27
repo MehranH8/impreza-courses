@@ -7,7 +7,13 @@ import { useState } from "react"
 
 
 
+
 const Home = () => {
+
+
+
+
+    
     const [course, setcourse] = useState({
         data: [
             ["https://impreza23.us-themes.com/wp-content/uploads/2013/06/stephen-phillips-hostreviews-co-uk-3Mhgvrk4tjM-unsplash-1024x683.jpg", "90", "20 ساعت", "مقدماتی", "دوره آموزش  جاوا اسکریپت", "مارکتینگ"],
