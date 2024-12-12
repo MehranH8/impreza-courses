@@ -7,6 +7,7 @@ import { BiDollar } from "react-icons/bi";
 import { GiGraduateCap } from "react-icons/gi";
 import { AiOutlineRise } from "react-icons/ai";
 import { MdEngineering } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 
 const approach = () => {
@@ -101,6 +102,7 @@ const About = () => {
     return (
         <div>
             <div className=" mx-16 md:mx-32 mt-24">
+                {/*title */}
                 <div className=" w-full lg:w-[75%] xl:w-[65%] ">
                     <h3 className="text-[24px] sm:text-[40px] font-bold mb-4">
                         درباره دوره های آنلاین
@@ -109,6 +111,8 @@ const About = () => {
                         لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد
                     </p>
                 </div>
+                {/*title */}
+                {/*numbers */}
                 <div className="grid grid-cols-2 md:grid-cols-3 justify-items-center mt-28 -mx-16 xl:mx-0">
                     <div>
                         <div>
@@ -135,6 +139,8 @@ const About = () => {
                         </div>
                     </div>
                 </div>
+                {/*numbers */}
+                {/*about */}
                 <div className="mt-36 ">
                     <div className="mb-20 text-center sm:text-start">
                         <h3 className="text-[24px] sm:text-[28px] font-bold mb-4">
@@ -212,6 +218,8 @@ const About = () => {
                         </div>
                     </div>
                 </div>
+                {/*about */}
+                {/*method */}
                 <div>
                     <div className="mb-16 mt-36">
                         <h3 className="text-[24px] sm:text-[28px] font-bold mb-4">
@@ -241,7 +249,8 @@ const About = () => {
 
                     {activeStep == 0 ? approach() : (activeStep == 1 ? start() : (activeStep == 2 ? practice() : result()))}
                 </div>
-
+                {/*method */}
+                {/*why us */}
                 <div className="mb-36">
                     <div className="mb-20 text-center sm:text-start">
                         <h3 className="text-[24px] sm:text-[28px] font-bold mb-4">
@@ -327,6 +336,8 @@ const About = () => {
                         </div>
                     </div>
                 </div>
+                {/*why us */}
+                {/*teachers*/}
                 <div className="mb-12">
                     <div className="mb-20">
                         <h3 className="text-[24px] sm:text-[28px] font-bold mb-4">
@@ -440,6 +451,7 @@ const About = () => {
                         </div>
                     </div>
                 </div>
+                {/*teachers*/}
             </div>
             {/*footer*/}
             <div className="relative h-[1200px] sm:h-[700px] md:h-[400px] bg-[#0f131f] mt-72 sm:mt-60">
@@ -449,7 +461,9 @@ const About = () => {
                     </div>
                     <div className="text-center">
                         <button className="hover:bg-mainblue hover:text-white border-[3px] hover:border-white border-mainblue transition-colors duration-500 py-2 px-6 rounded-[3rem] text-[20px] text-[#35415b] bg-white" type="submit">
-                            نمایش دوره ها
+                            <Link to="/courses">
+                                نمایش دوره ها
+                            </Link>
                         </button>
                     </div>
                 </div>
@@ -486,6 +500,7 @@ const About = () => {
                     </div>
                 </div>
             </div>
+            {/*footer*/}
         </div>
     )
 }

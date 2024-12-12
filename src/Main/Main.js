@@ -11,7 +11,7 @@ import Coursedetail from "../components/Coursedetail/Coursedetail";
 
 const Main = () => {
     return (
-        <div>
+        <div className="">
             <NavbarSimple />
             <Routes>
             <Route path="/" element={<Home/>} />

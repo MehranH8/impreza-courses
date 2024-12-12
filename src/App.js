@@ -4,7 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
+    <div style={{direction:"rtl"}} className="App">
       <Router>
       <Main />
       </Router>

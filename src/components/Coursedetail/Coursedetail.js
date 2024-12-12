@@ -7,6 +7,7 @@ import { BsTwitterX, BsLinkedin } from "react-icons/bs";
 import { FaFacebook } from "react-icons/fa";
 import Coursecard from "../Ui/Coursecard/Coursecard"
 import { useState } from "react"
+import { Link } from "react-router-dom";
 
 
 import {
@@ -58,6 +59,7 @@ const Coursedetail = () => {
     console.log(open);
     return (
         <div>
+            {/*title*/}
             <div className="relative">
                 <img className="w-full h-[50vh]" src="https://impreza23.us-themes.com/wp-content/uploads/2014/01/kevin-ku-w7ZyuGYNpRQ-unsplash-1024x768.jpg" alt="container-img" />
                 <div className="bg-darkcontainer2xl h-[50vh]  absolute w-full top-0 ">
@@ -87,7 +89,9 @@ const Coursedetail = () => {
                     </div>
                 </div>
             </div>
+            {/*title*/}
             <div className="mx-16 md:mx-32 mt-24 lg:grid lg:grid-cols-3">
+                {/*detail*/}
                 <div className="lg:col-span-2">
                     <div >
                         <h2 className="text-[28px] font-bold mb-8">
@@ -177,6 +181,8 @@ const Coursedetail = () => {
                         </div>
                     </div>
                 </div>
+                {/*detail*/}
+                {/*card*/}
                 <div style={{ boxShadow: "rgba(0, 0, 0, 0.15) 0px 5px 15px" }} className="sticky text-center hidden top-[15%] mb-24 pb-8 w-full xl:w-[80%] h-[265px] py-10 lg:flex flex-col justify-self-center ml-[-8rem]">
                     <div >
                         <div className="mb-6">
@@ -190,6 +196,8 @@ const Coursedetail = () => {
                         </div>
                     </div>
                 </div>
+                {/*card*/}
+                {/*according detail*/}
                 <div className="lg:col-span-2 mt-24">
                     <div>
                         <h3 className="text-[28px] font-bold mb-8">
@@ -243,6 +251,8 @@ const Coursedetail = () => {
                         </AccordionBody>
                     </Accordion>
                 </div>
+                {/*according detail*/}
+                {/*teacher*/}
                 <div className="lg:col-span-2 mt-24 mb-24">
                     <div className="text-center sm:text-start">
                         <h3 className="text-[28px] font-bold mb-8">
@@ -276,6 +286,8 @@ const Coursedetail = () => {
                         </div>
                     </div>
                 </div>
+                {/*teacher*/}
+                {/*card*/}
                 <div style={{ boxShadow: "rgba(0, 0, 0, 0.15) 0px 5px 15px" }} className="lg:hidden text-center justify-self-auto mb-24 pb-8 w-full h-[265px] py-10 flex flex-col ">
                     <div >
                         <div className="mb-6">
@@ -289,7 +301,9 @@ const Coursedetail = () => {
                         </div>
                     </div>
                 </div>
+                {/*card*/}
             </div>
+            {/*other courses*/}
             <div className="bg-[#f2f4f7] pt-32 pb-32">
                 <div className="text-center">
                     <h3 className="text-[28px] font-bold mb-8">
@@ -303,10 +317,14 @@ const Coursedetail = () => {
                     ))}
                 </div>
                 <div className="text-center mt-24">
-                    <button className="text-white hover:text-black bg-[#646cfd] lg:px-8 px-6 py-2 rounded-[4rem] text-[20px] mx-2 border-[3px] border-[#646cfd] hover:bg-transparent transition-colors duration-300 " type="button">تمام دوره ها</button>
+                    <button className="text-white hover:text-black bg-[#646cfd] lg:px-8 px-6 py-2 rounded-[4rem] text-[20px] mx-2 border-[3px] border-[#646cfd] hover:bg-transparent transition-colors duration-300 " type="button">
+                        <Link to="/courses">
+                            تمام دوره ها
+                        </Link>
+                    </button>
                 </div>
             </div>
-
+            {/*other courses*/}
             {/*footer */}
             <div className="relative py-6 bg-[#0f131f] ">
                 <div className="flex justify-between flex-col md:flex-row mx-8 md:mx-6 lg:mx-20 xl:mx-36">

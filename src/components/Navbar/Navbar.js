@@ -56,7 +56,7 @@ function NavList() {
     }, []);
 
     return (
-        <Navbar className={openNav ? "mx-auto w-full px-12 mt-1 py-3 shadow-2xl sm:shadow-none" : "mx-auto w-full px-12 mt-1 py-3 shadow-none"}>
+        <Navbar className={openNav ? "mx-auto w-full px-8 md:px-12 mt-1 py-3 shadow-2xl sm:shadow-none" : "mx-auto w-full px-12 mt-1 py-3 shadow-none"}>
             <div style={{direction:"ltr"}} className="flex items-center justify-between text-blue-gray-900">
                 <Link
                    to="/"

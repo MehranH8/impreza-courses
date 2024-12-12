@@ -14,16 +14,19 @@ const Blog = () => {
     })
     return (
         <div>
+            {/*title*/}
             <div className="text-center mx-16 lg:mx-0 mt-16 mb-16">
                 <h2 className="text-[30px] font-bold">بلاگ</h2>
             </div>
+            {/*title*/}
+            {/*blog cards*/}
             <div>
                 {blog.data.map((item) => (
                     <Blogcard img={item[0]} title={item[1]} year={item[2]} date={item[3]} description={item[4]}/>
                 ))}
             </div>
-
-
+            {/*blog cards*/}
+            {/*footer*/}
             <div className="relative py-6 bg-[#0f131f] mt-36">
                 <div className="flex justify-between flex-col md:flex-row mx-8 md:mx-6 lg:mx-20 xl:mx-36">
                     <div >
@@ -58,6 +61,7 @@ const Blog = () => {
                     </div>
                 </div>
             </div>
+            {/*footer*/}
         </div>
     )
 }

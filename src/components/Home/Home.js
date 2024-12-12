@@ -4,6 +4,9 @@ import home2 from "../../img/home2.jpg"
 import home3 from "../../img/home3.jpg"
 import Coursecard from "../Ui/Coursecard/Coursecard";
 import { useState } from "react"
+import { Link } from "react-router-dom";
+import { useFormik } from 'formik';
+import * as yup from "yup";
 
 
 
@@ -11,9 +14,26 @@ import { useState } from "react"
 const Home = () => {
 
 
+    const formik = useFormik({
+        initialValues: {
+            name: "",
+            email: "",
+            phone: "",
 
 
-    
+        },
+        onSubmit: (values) => {
+            console.log(values)
+
+        },
+        validationSchema: yup.object({
+            name: yup.string().required("الزامی"),
+            phone: yup.number().required("الزامی"),
+            email: yup.string().email("ایمیل معتبر نیست").required("الزامی"),
+        })
+    })
+
+
     const [course, setcourse] = useState({
         data: [
             ["https://impreza23.us-themes.com/wp-content/uploads/2013/06/stephen-phillips-hostreviews-co-uk-3Mhgvrk4tjM-unsplash-1024x683.jpg", "90", "20 ساعت", "مقدماتی", "دوره آموزش  جاوا اسکریپت", "مارکتینگ"],
@@ -23,6 +43,7 @@ const Home = () => {
     })
     return (
         <div>
+            {/*title*/}
             <div className="relative">
                 <Carousel
 
@@ -101,6 +122,8 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+            {/*title*/}
+            {/*courses*/}
             <div className="mb-44">
                 <h2 className="text-[28px] font-bold text-center my-14">پر طرفدار ترین دوره ها</h2>
                 <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 mx-12">
@@ -111,6 +134,8 @@ const Home = () => {
                     ))}
                 </div>
             </div>
+            {/*courses*/}
+            {/*detail*/}
             <div className=" flex flex-col-reverse lg:grid grid-cols-1  lg:grid-cols-3 mb-10 md:mb-24 lg:mb-36">
                 <div className="col-span-2 flex justify-center lg:justify-start">
                     <img style={{ boxShadow: "rgba(0, 0, 0, 0.15) 0px 5px 15px" }} className="rounded-2xl xl:h-[560px] w-[90%]" src={home1} alt="home-img" />
@@ -122,7 +147,11 @@ const Home = () => {
                     <p className="text-justify text-[16px] mb-3 xl:mb-6">
                         لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد.
                     </p>
-                    <button className="bg-[#e3e7f0] -mr-2 lg:mr-0 border-[3px] border-[#e3e7f0] transition-colors duration-500 hover:bg-white hover:border-mainblue px-5 py-2 text-[#35415b] rounded-3xl" type="button">دیدن دوره ها</button>
+                    <button className="bg-[#e3e7f0] -mr-2 lg:mr-0 border-[3px] border-[#e3e7f0] transition-colors duration-500 hover:bg-white hover:border-mainblue px-5 py-2 text-[#35415b] rounded-3xl" type="button">
+                        <Link to="/courses">
+                            دیدن دوره ها
+                        </Link>
+                    </button>
                 </div>
             </div>
             <div className="flex flex-col lg:grid grid-cols-1 lg:grid-cols-3 mb-10 md:mb-24 lg:mb-36">
@@ -133,7 +162,11 @@ const Home = () => {
                     <p className="text-justify text-[16px] mb-3 xl:mb-6">
                         لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد.
                     </p>
-                    <button className="bg-[#e3e7f0] -mr-2 lg:mr-0 border-[3px] border-[#e3e7f0] transition-colors duration-500 hover:bg-white hover:border-mainblue px-5 py-2 text-[#35415b] rounded-3xl" type="button"> بیشتر</button>
+                    <button className="bg-[#e3e7f0] -mr-2 lg:mr-0 border-[3px] border-[#e3e7f0] transition-colors duration-500 hover:bg-white hover:border-mainblue px-5 py-2 text-[#35415b] rounded-3xl" type="button">
+                        <Link to="/about">
+                            بیشتر
+                        </Link>
+                    </button>
                 </div>
                 <div className="col-span-2 flex justify-center lg:justify-end">
                     <img style={{ boxShadow: "rgba(0, 0, 0, 0.15) 0px 5px 15px" }} className="rounded-2xl xl:h-[560px] w-[90%]" src={home2} alt="home-img" />
@@ -150,9 +183,15 @@ const Home = () => {
                     <p className="text-justify text-[16px] mb-3 xl:mb-6">
                         لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد.
                     </p>
-                    <button className="bg-[#e3e7f0] -mr-2 lg:mr-0 border-[3px] border-[#e3e7f0] transition-colors duration-500 hover:bg-white hover:border-mainblue px-5 py-2 text-[#35415b] rounded-3xl" type="button">اطلاعات بیشتر</button>
+                    <button className="bg-[#e3e7f0] -mr-2 lg:mr-0 border-[3px] border-[#e3e7f0] transition-colors duration-500 hover:bg-white hover:border-mainblue px-5 py-2 text-[#35415b] rounded-3xl" type="button">
+                        <Link to="/about">
+                            اطلاعات بیشتر
+                        </Link>
+                    </button>
                 </div>
             </div>
+            {/*detail*/}
+
             {/*footer */}
             <div className="relative h-[1200px] sm:h-[700px] md:h-[400px] bg-[#0f131f] mt-72 sm:mt-60">
                 <div style={{ boxShadow: "rgba(0, 0, 0, 0.15) 0px 5px 15px 0px" }} className=" bg-white grid absolute top-0 left-[50%] translate-x-[-50%] translate-y-[-50%] grid-cols-1 lg:grid-cols-2 w-[70%] rounded-md py-6 sm:py-14">
@@ -163,13 +202,26 @@ const Home = () => {
                         </p>
                     </div>
                     <div className="mr-4 ml-4 sm:mr-12 sm:ml-12 lg:ml-8 lg:mr-8 xl:mr-28">
-                        <form>
+                        <form onSubmit={formik.handleSubmit}>
                             <div className="w-full mb-4">
-                                <input className=" w-full border-[1px] border-gray-400 rounded-md text-[14px] p-2" placeholder="نام و نام خانوادگی" type="text" />
+                                <input name="name" id="name" onblur={formik.handleBlur} onchange={formik.handleChange} className=" w-full border-[1px] border-gray-400 rounded-md text-[14px] p-2" placeholder="نام و نام خانوادگی" type="text" />
+                                {formik.touched.name && formik.errors.name ? (
+                                    <div className="text-red-700 !text-[12px] text-base w-full max-w-sm lg:max-w-none ">{formik.errors.name}</div>
+                                ) : null}
                             </div>
                             <div className="w-full gap-4 mb-10 sm:flex">
-                                <input className="w-full mb-4 sm:mb-0 border-[1px] border-gray-400 rounded-md text-[14px] p-2" placeholder="شماره تلفن" type="text" />
-                                <input className="w-full border-[1px] border-gray-400 rounded-md text-[14px] p-2" placeholder="ایمیل" type="email" />
+                                <div>
+                                    <input name="phone" id="phone" onblur={formik.handleBlur} onchange={formik.handleChange} className="w-full mb-4 sm:mb-0 border-[1px] border-gray-400 rounded-md text-[14px] p-2" placeholder="شماره تلفن" type="text" />
+                                    {formik.touched.phone && formik.errors.phone ? (
+                                        <div className="text-red-700 !text-[12px] text-base w-full max-w-sm lg:max-w-none ">{formik.errors.phone}</div>
+                                    ) : null}
+                                </div>
+                                <div>
+                                    <input name="email" id="email" onblur={formik.handleBlur} onchange={formik.handleChange} className="w-full border-[1px] border-gray-400 rounded-md text-[14px] p-2" placeholder="ایمیل" type="email" />
+                                    {formik.touched.email && formik.errors.email ? (
+                                        <div className="text-red-700 !text-[12px] text-base w-full max-w-sm lg:max-w-none ">{formik.errors.email}</div>
+                                    ) : null}
+                                </div>
                             </div>
                             <div>
                                 <button className="bg-mainblue text-white border-2 border-mainblue transition-colors duration-500 py-2 px-6 rounded-[3rem] hover:text-[#35415b] hover:bg-white" type="submit">
