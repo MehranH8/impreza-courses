@@ -30,22 +30,54 @@ const Blog = () => {
             <div className="relative py-6 bg-[#0f131f] mt-36">
                 <div className="flex justify-between flex-col md:flex-row mx-8 md:mx-6 lg:mx-20 xl:mx-36">
                     <div >
-                        <div className="my-12">
+                    <div className="my-12">
                             <ul className="flex flex-col sm:flex-row gap-8">
                                 <li className="text-[#8d9096] text-[20px]  ">کمپانی</li>
-                                <li className="text-[#646cfd] text-[18px]  cursor-pointer hover:text-white transition-colors duration-300">درباره ما</li>
-                                <li className="text-[#646cfd] text-[18px]  cursor-pointer hover:text-white transition-colors duration-300">بلاگ</li>
-                                <li className="text-[#646cfd] text-[18px]  cursor-pointer hover:text-white transition-colors duration-300">قوانین پرداخت</li>
-                                <li className="text-[#646cfd] text-[18px]  cursor-pointer hover:text-white transition-colors duration-300">قوانین سایت</li>
+                                <li className="text-[#646cfd] text-[18px]  cursor-pointer hover:text-white transition-colors duration-300">
+                                    <Link to="/about">
+                                        درباره ما
+                                    </Link>
+                                </li>
+                                <li className="text-[#646cfd] text-[18px]  cursor-pointer hover:text-white transition-colors duration-300">
+                                    <Link to="/blog">
+                                        بلاگ
+                                    </Link>
+                                </li>
+                                <li className="text-[#646cfd] text-[18px]  cursor-pointer hover:text-white transition-colors duration-300">
+                                    <Link to="/about">
+                                        قوانین پرداخت
+                                    </Link>
+                                </li>
+                                <li className="text-[#646cfd] text-[18px]  cursor-pointer hover:text-white transition-colors duration-300">
+                                    <Link to="/about">
+                                        قوانین سایت
+                                    </Link>
+                                </li>
                             </ul>
                         </div>
                         <div className="my-12">
                             <ul className="flex flex-col sm:flex-row gap-8">
                                 <li className="text-[#8d9096] text-[20px] ">دوره ها</li>
-                                <li className="text-[#646cfd] text-[18px] cursor-pointer hover:text-white transition-colors duration-300">طراحی</li>
-                                <li className="text-[#646cfd] text-[18px] cursor-pointer hover:text-white transition-colors duration-300">برنامه نویسی</li>
-                                <li className="text-[#646cfd] text-[18px] cursor-pointer hover:text-white transition-colors duration-300">مارکتینگ</li>
-                                <li className="text-[#646cfd] text-[18px] cursor-pointer hover:text-white transition-colors duration-300">بیزینس</li>
+                                <li className="text-[#646cfd] text-[18px] cursor-pointer hover:text-white transition-colors duration-300">
+                                    <Link to="/courses">
+                                        طراحی
+                                    </Link>
+                                </li>
+                                <li className="text-[#646cfd] text-[18px] cursor-pointer hover:text-white transition-colors duration-300">
+                                    <Link to="/courses">
+                                        برنامه نویسی
+                                    </Link>
+                                </li>
+                                <li className="text-[#646cfd] text-[18px] cursor-pointer hover:text-white transition-colors duration-300">
+                                    <Link to="/courses">
+                                        مارکتینگ
+                                    </Link>
+                                </li>
+                                <li className="text-[#646cfd] text-[18px] cursor-pointer hover:text-white transition-colors duration-300">
+                                    <Link to="/courses">
+                                        بیزینس
+                                    </Link>
+                                </li>
                             </ul>
                         </div>
                     </div>
