@@ -1,12 +1,37 @@
 import { Link } from "react-router-dom"
+import { useState } from "react"
+import { useLocation } from "react-router-dom"
 
 const Blogdetail = () => {
+    const [blog, setblog] = useState({
+        data: [
+            ["https://impreza23.us-themes.com/wp-content/uploads/2020/08/cowomen-pd5FVvQ9-aY-unsplash-600x600.jpg", "چند نکته ی طلایی برای مارکتینگ", "4 سال پیش", "8/22/2020", "  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد،","/blog/detail/1"],
+            ["https://impreza23.us-themes.com/wp-content/uploads/2020/08/daniel-korpai-vHVfpi3h5xk-unsplash-600x600.jpg", "بروزرسانی جدید جاوااسکریپت", "4 سال پیش", "8/22/2020", "  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد،","/blog/detail/2"],
+            ["https://impreza23.us-themes.com/wp-content/uploads/2020/08/ux-indonesia-qC2n6RQU4Vw-unsplash-600x600.jpg", "10 تریدر برتر سال 2024", "4 سال پیش", "8/22/2020", "  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد،","/blog/detail/3"],
+            ["https://impreza23.us-themes.com/wp-content/uploads/2020/08/brooke-cagle-uHVRvDr7pg-unsplash-600x600.jpg", "مهمترین اصول طراحی دیجیتال", "4 سال پیش", "8/22/2020", "  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد،","/blog/detail/4"],
+            ["https://impreza23.us-themes.com/wp-content/uploads/2020/08/john-schnobrich-2FPjlAyMQTA-unsplash-600x600.jpg", "چند نکته ی طلایی برای مارکتینگ", "4 سال پیش", "8/22/2020", "  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد،","/blog/detail/5"],
+
+        ]
+    })
+
+
+    const caourseindex = useLocation().pathname
+
+    const choosenindex = blog.data.findIndex((id) => {
+        if (id[5] == caourseindex) {
+            return blog
+        }
+    })
+
+
     return (
         <div>
             <div className="mx-12 md:mx-16 lg:mx-24 xl:mx-36 mt-20">
                 {/*title*/}
                 <div className="mb-6">
-                    <h2 className="text-[24px] font-bold">چند نکته ی طلایی برای مارکتینگ</h2>
+                    <h2 className="text-[24px] font-bold">
+                    {blog.data[choosenindex][1]}
+                    </h2>
                 </div>
                 <div className="mb-6">
                     <span className="text-[14px] text-[#35315b] ml-8"> 4 سال پیش</span>
@@ -25,7 +50,7 @@ const Blogdetail = () => {
                     {/*title*/}
                     {/*side blogs*/}
                     <div>
-                        <Link to="/blog/detail">
+                        <Link to="/blog">
                             <div className="grid grid-cols-2 gap-8 md:flex md:gap-4 lg:gap-8 items-center bg-[#f2f4f7] md:min-w-[280px] lg:min-w-[300px] xl:min-w-[350px] mb-8">
                                 <div className=" ">
                                     <blog-img className="max-w-[100%] max-h-[100%] md:max-w-[130px] md:max-h-[110px] lg:max-w-[180px] lg:max-h-[150px]" src="https://impreza23.us-themes.com/wp-content/uploads/2020/08/john-schnobrich-2FPjlAyMQTA-unsplash-1024x683.jpg" alt="blog-img" />
@@ -35,7 +60,7 @@ const Blogdetail = () => {
                                 </div>
                             </div>
                         </Link>
-                        <Link to="/blog/detail">
+                        <Link to="/blog">
                             <div className="grid grid-cols-2 gap-8 md:flex  md:gap-4 lg:gap-8 items-center bg-[#f2f4f7] md:min-w-[280px] lg:min-w-[300px] xl:min-w-[350px] mb-8">
                                 <div className="">
                                     <img className="max-w-[100%] max-h-[100%] md:max-w-[130px] md:max-h-[110px] lg:max-w-[180px] lg:max-h-[150px]" src="https://impreza23.us-themes.com/wp-content/uploads/2020/08/john-schnobrich-2FPjlAyMQTA-unsplash-1024x683.jpg" alt="blog-img" />

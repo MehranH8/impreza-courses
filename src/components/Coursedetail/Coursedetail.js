@@ -1,5 +1,5 @@
 import React from "react";
-
+import { useLocation } from "react-router-dom";
 import { MdInsights, MdGroups, MdDesignServices } from "react-icons/md";
 import { FaRegClock } from "react-icons/fa";
 import { FaCode, FaUserCheck } from "react-icons/fa6";
@@ -21,17 +21,40 @@ import {
 const Coursedetail = () => {
     const [course, setcourse] = useState({
         data: [
-            ["https://impreza23.us-themes.com/wp-content/uploads/2014/01/kevin-ku-w7ZyuGYNpRQ-unsplash-1024x768.jpg", "90", "12 ساعت", "مقدماتی", "دوره آموزش  جاوا اسکریپت", "برنامه نویسی"],
-            ["https://impreza23.us-themes.com/wp-content/uploads/2013/06/markus-spiske-70Rir5vB96U-unsplash-1024x683.jpg", "90", "12 ساعت", "مقدماتی", "دوره آموزش  جاوا اسکریپت", "برنامه نویسی"],
-            ["https://impreza23.us-themes.com/wp-content/uploads/2013/06/kal-visuals-8OFRGUcJP2Y-unsplash-1024x683.jpg", "90", "12 ساعت", "مقدماتی", "دوره آموزش  جاوا اسکریپت", "برنامه نویسی"],
-            ["https://impreza23.us-themes.com/wp-content/uploads/2013/06/kal-visuals-8OFRGUcJP2Y-unsplash-1024x683.jpg", "90", "12 ساعت", "مقدماتی", "دوره آموزش  جاوا اسکریپت", "برنامه نویسی"],
+            ["https://impreza23.us-themes.com/wp-content/uploads/2013/06/markus-spiske-70Rir5vB96U-unsplash-1024x683.jpg", "84", "12 ساعت", "مقدماتی", "دوره آموزش پایتون", "برنامه نویسی","/course/detail/2"],
+            ["https://impreza23.us-themes.com/wp-content/uploads/2013/06/kal-visuals-8OFRGUcJP2Y-unsplash-1024x683.jpg", "90", "12 ساعت", "پیشرفته", "دوره آموزش  جاوا ", "برنامه نویسی","/course/detail/3"],
+            ["https://impreza23.us-themes.com/wp-content/uploads/2013/06/ux-store-jJT2r2n7lYA-unsplash-1024x683.jpg", "70", "12 ساعت", "پیشرفته", "دوره آموزش  جاوا اسکریپت", "برنامه نویسی","/course/detail/5"],
+            ["https://impreza23.us-themes.com/wp-content/uploads/2013/06/carlos-muza-hpjSkU2UYSU-unsplash-1024x730.jpg", "90", "12 ساعت", "مقدماتی", "دوره آموزش  ترید ", "بیزینس ","/course/detail/7"],
+        ]
+    })
+
+    const [courseall, setcourseall] = useState({
+        data: [
+            ["https://impreza23.us-themes.com/wp-content/uploads/2014/01/kevin-ku-w7ZyuGYNpRQ-unsplash-1024x768.jpg", "90", "12 ساعت", "پیشرفته", "دوره آموزش  جاوا اسکریپت", "برنامه نویسی","/course/detail/1"],
+            ["https://impreza23.us-themes.com/wp-content/uploads/2013/06/nordwood-themes-8LfE0Lywyak-unsplash-1024x683.jpg", "150", "12 ساعت", "مقدماتی", "دوره آموزش  طراحی دیجیتال ", "طراحی","/course/detail/6"],
+            ["https://impreza23.us-themes.com/wp-content/uploads/2013/06/eftakher-alam-i1VQZsU86ok-unsplash-1024x807.jpg", "90", "12 ساعت", "پیشرفته", "دوره آموزش  مارکتینگ", "مارکتینگ ","/course/detail/4"],
+            ["https://impreza23.us-themes.com/wp-content/uploads/2013/06/markus-spiske-70Rir5vB96U-unsplash-1024x683.jpg", "84", "12 ساعت", "مقدماتی", "دوره آموزش پایتون", "برنامه نویسی","/course/detail/2"],
+            ["https://impreza23.us-themes.com/wp-content/uploads/2013/06/kal-visuals-8OFRGUcJP2Y-unsplash-1024x683.jpg", "90", "12 ساعت", "پیشرفته", "دوره آموزش  جاوا ", "برنامه نویسی","/course/detail/3"],
+            ["https://impreza23.us-themes.com/wp-content/uploads/2013/06/ux-store-jJT2r2n7lYA-unsplash-1024x683.jpg", "70", "12 ساعت", "پیشرفته", "دوره آموزش  جاوا اسکریپت", "برنامه نویسی","/course/detail/5"],
+            ["https://impreza23.us-themes.com/wp-content/uploads/2013/06/carlos-muza-hpjSkU2UYSU-unsplash-1024x730.jpg", "90", "12 ساعت", "مقدماتی", "دوره آموزش  ترید ", "بیزینس ","/course/detail/7"],
+            ["https://impreza23.us-themes.com/wp-content/uploads/2013/06/nathan-da-silva-FO7kUmBYVi0-unsplash-1024x1024.jpg", "100", "12 ساعت", "پیشرفته", "دوره آموزش  جاوا اسکریپت", "برنامه نویسی","/course/detail/8"],
+            ["https://impreza23.us-themes.com/wp-content/uploads/2013/06/stephen-phillips-hostreviews-co-uk-3Mhgvrk4tjM-unsplash-1024x683.jpg", "90", "20 ساعت", "مقدماتی", "دوره آموزش فروش محصولات", "مارکتینگ","/course/detail/9"],
+            ["https://impreza23.us-themes.com/wp-content/uploads/2013/06/jakob-owens-WUmb_eBrpjs-unsplash-1024x683.jpg ", "90", "24 ساعت", "پیشرفته", "دوره آموزش  جاوا اسکریپت", "برنامه نویسی","/course/detail/10"],
+            ["https://impreza23.us-themes.com/wp-content/uploads/2013/06/nathan-da-silva-FO7kUmBYVi0-unsplash-1024x1024.jpg", "90", "12 ساعت", "مقدماتی", "دوره آموزش  جاوا اسکریپت", "برنامه نویسی","/course/detail/11"],
+
         ]
     })
 
 
 
 
+    const caourseindex = useLocation().pathname
 
+    const choosenindex = courseall.data.findIndex((id) => {
+        if (id[6] == caourseindex) {
+            return courseall
+        }
+    })
 
 
 
@@ -61,15 +84,17 @@ const Coursedetail = () => {
         <div>
             {/*title*/}
             <div className="relative">
-                <img className="w-full h-[50vh]" src="https://impreza23.us-themes.com/wp-content/uploads/2014/01/kevin-ku-w7ZyuGYNpRQ-unsplash-1024x768.jpg" alt="container-img" />
+                <img className="w-full h-[50vh]" src={courseall.data[choosenindex][0]} alt="container-img" />
                 <div className="bg-darkcontainer2xl h-[50vh]  absolute w-full top-0 ">
                     <div className="lg:mx-56 md:mx-36 mt-12">
                         <div className="mb-6 text-center">
-                            <span className=" text-white relative top-[-10%]  bg-mainblue inline-block w-fit px-3 py-1 rounded-md text-[14px]">برنامه نویسی</span>
+                                <span className=" text-white relative top-[-10%]  bg-mainblue inline-block w-fit px-3 py-1 rounded-md text-[14px]">
+                                {courseall.data[choosenindex][5]}
+                                </span>
                         </div>
                         <div className="mb-10 text-center ">
                             <h2 className="text-[28px] text-white font-bold">
-                                دوره آموزش جاوا اسکریپت
+                                {courseall.data[choosenindex][4]}
                             </h2>
                         </div>
                         <div className="flex gap-14 text-center justify-center">
@@ -79,11 +104,13 @@ const Coursedetail = () => {
                             </div>
                             <div className="">
                                 <div className="text-[#727f9f] text-[14px] mb-2">مدت زمان</div>
-                                <div className="text-white text-[16px]">12 ساعت</div>
+                                <div className="text-white text-[16px]">{courseall.data[choosenindex][2]}</div>
                             </div>
                             <div className="">
                                 <div className="text-[#727f9f] text-[14px] mb-2">سطح دوره</div>
-                                <div className="text-white text-[16px]">مقدماتی</div>
+                                <div className="text-white text-[16px]">
+                                {courseall.data[choosenindex][3]}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -189,7 +216,9 @@ const Coursedetail = () => {
                             <h3 className="text-[28px] mx-2 text-[#35415b]">خرید دوره آموزشی</h3>
                         </div>
                         <div className="mb-6">
-                            <span className="font-bold text-[#35415b] text-[30px]">90$</span>
+                            <span className="font-bold text-[#35415b] text-[30px]">
+                            {courseall.data[choosenindex][1]} $
+                            </span>
                         </div>
                         <div className="">
                             <button className="text-white hover:text-black bg-[#646cfd] lg:px-8 px-6 py-2 rounded-[4rem] text-[20px] mx-2 border-[3px] border-[#646cfd] hover:bg-transparent transition-colors duration-300 " type="button">خرید</button>
@@ -313,7 +342,7 @@ const Coursedetail = () => {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 mx-10 xl:mx-6 gap-8 xl:gap-6">
                     {course.data.map((item) => (
-                        <Coursecard topcontainer="flex justify-center" container="w-full" img={item[0]} price={item[1]} time={item[2]} dificulty={item[3]} detail={item[4]} title={item[5]} />
+                        <Coursecard topcontainer="flex justify-center" container="w-full" link={item[6]} img={item[0]} price={item[1]} time={item[2]} dificulty={item[3]} detail={item[4]} title={item[5]} />
                     ))}
                 </div>
                 <div className="text-center mt-24">

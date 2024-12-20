@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Coursecard = (props) => {
     return (
-        <Link to="/course/detail">
+        <Link to={props.link}>
             <div className={props.topcontainer}>
                 <div className={`relative justify-self-center max-w-[558px] h-[340px] sm:h-[373px] transition-all duration-500 cursor-pointer group rounded-xl hover:shadow-blue-gray-500 shadow-2xl ${props.container}`}>
                     <img className="h-[340px] sm:h-[373px] rounded-xl w-full" src={props.img} alt="course-img" />

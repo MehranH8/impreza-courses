@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 const Blogcard = (props) => {
     return (
         <div className="flex  flex-col md:flex-row gap-10 mx-12 lg:w-[65%] xl:w-[60%] items-center lg:mx-auto mb-32 lg:mb-24">
-            <Link to="/blog/detail">
+            <Link to={props.link}>
                 <div className="cursor-pointer">
                     <img className="rounded-[50%] max-w-[235px]" src={props.img} alt="blog-img" />
                 </div>

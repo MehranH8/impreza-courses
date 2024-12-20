@@ -115,10 +115,18 @@ const Home = () => {
                         دوره های ما
                     </p>
                     <div className="">
-                        <button className="text-white bg-[#646cfd] lg:px-8 px-6 py-2 rounded-[4rem] text-[20px] mx-2 border-[3px] border-[#646cfd] hover:bg-transparent transition-colors duration-500 " type="button">طراحی</button>
-                        <button className="text-white bg-[#646cfd] lg:px-8 px-6 py-2 rounded-[4rem] text-[20px] mx-2 border-[3px] border-[#646cfd] hover:bg-transparent transition-colors duration-500 " type="button">برنامه نویسی</button>
-                        <button className="text-white bg-[#646cfd] lg:px-8 px-6 py-2 rounded-[4rem] text-[20px] mx-2 border-[3px] border-[#646cfd] hover:bg-transparent transition-colors duration-500  mt-4 md:mt-0" type="button">بیزینس</button>
-                        <button className="text-white bg-[#646cfd] lg:px-8 px-6 py-2 rounded-[4rem] text-[20px] mx-2 border-[3px] border-[#646cfd] hover:bg-transparent transition-colors duration-500  mt-4 md:mt-0" type="button">مارکتینگ</button>
+                        <Link to="/courses">
+                            <button className="text-white bg-[#646cfd] lg:px-8 px-6 py-2 rounded-[4rem] text-[20px] mx-2 border-[3px] border-[#646cfd] hover:bg-transparent transition-colors duration-500 " type="button">طراحی</button>
+                        </Link>
+                        <Link to="/courses">
+                            <button className="text-white bg-[#646cfd] lg:px-8 px-6 py-2 rounded-[4rem] text-[20px] mx-2 border-[3px] border-[#646cfd] hover:bg-transparent transition-colors duration-500 " type="button">برنامه نویسی</button>
+                        </Link>
+                        <Link to="/courses">
+                            <button className="text-white bg-[#646cfd] lg:px-8 px-6 py-2 rounded-[4rem] text-[20px] mx-2 border-[3px] border-[#646cfd] hover:bg-transparent transition-colors duration-500  mt-4 md:mt-0" type="button">بیزینس</button>
+                        </Link>
+                        <Link to="/courses">
+                            <button className="text-white bg-[#646cfd] lg:px-8 px-6 py-2 rounded-[4rem] text-[20px] mx-2 border-[3px] border-[#646cfd] hover:bg-transparent transition-colors duration-500  mt-4 md:mt-0" type="button">مارکتینگ</button>
+                        </Link>
                     </div>
                 </div>
             </div>
